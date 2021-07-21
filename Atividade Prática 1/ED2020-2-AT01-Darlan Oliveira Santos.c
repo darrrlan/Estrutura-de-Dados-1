@@ -91,8 +91,7 @@ void fechaArquivo(FILE *arquivo1,FILE *arquivo2){
     PtrNoPilha topo;
     int tamanho;
   } PilhaDinamica;
-
-
+//==============================================================================
   void  iniciaPilhaD (PilhaDinamica * p){// inicia PilhaDinamica
     p->topo = NULL;//topo inicia NULL
     p->tamanho = 0;//tamanho igual 0
