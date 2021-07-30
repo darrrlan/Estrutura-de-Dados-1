@@ -1,0 +1,8 @@
+
+     cor     pai   d(abertura)  f(fechamento)   [tempo = 12]
+ u   preto   NULL       1             8
+ v   preto    u         2             7
+ w   preto   NULL       9             12
+ x   preto    y         4             5
+ y   preto    v         3             6
+ z   preto    w         10            11

@@ -1,0 +1,49 @@
+S = {s(0), y(5), z(7), t(8), x(9)}
+vertice   cor     pai    d (tempo max)
+s         preto   NULL   0
+t         preto    y     8
+x         preto    t     9
+y         preto    s     5
+z         preto    y     7
+
+it 01 (s):
+relaxar(s,t,w) = t.d (Inf) > s.d (0) + w(s,t) (10)
+Inf > 10 ? atualizar t.d = 0 + 10 = 10, t.pai = s
+
+relaxar(s,y,w) = y.d (Inf) > s.d (0) + w(s,y) (5)
+Inf > 5? atualiza y.d = 5, y.pai = s
+
+it 02 (y):
+adj(y) = {t,x,z}
+relaxar(y,t,w) = t.d(10) > y.d (5) + w(y,t) (3)
+10 > 5 + 3 ? Sim, atualizar o peso de y
+t.d = 5 + 3 = 8
+t.pai = y
+
+relaxar(y,x,w) = x.d(inf) > y.d (5) + w(y,x) (9)
+Inf > 14 (5+9) Sim!
+x.d = 14
+x.pai = y
+
+relaxar(y,z,w) = z.d(inf) > y.d (5) + w(y,z) (2)
+Inf > 5 + 2? Sim
+z.d = 7
+z.pai = y
+
+iteração 03 (z):
+relaxar(z,s,w): s.d > z.d + w(z,s)
+0 > 7 + 7. Não! não atualiza
+
+relaxar(z,x,w): x.d (14) > z.d (7) + w(z,x) (6)
+14 > 7 + 6 (13)? Sim!
+x.d   = 13
+x.pai = z
+
+iteração 04 (t):
+relaxar(t,x,w): x.d (13) > t.d (8) + w(t,x) (1)
+13 > 8 + 1 ? Sim!
+x.d = 9
+x.pai = t
+
+iteracao 05 (x):
+nao faz nada

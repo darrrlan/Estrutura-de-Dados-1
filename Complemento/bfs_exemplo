@@ -1,0 +1,16 @@
+BFS (busca em largura): busca que,
+a partir de um vertice inicial,
+determina a quantidade minima de arestas necessarias
+para alcançar todos os vertices do Grafo
+
+vertice inicial = {s}
+Q/F = {} #
+Vertice     cor     d(tempo)    pai
+  r         preto      1        s
+  s         preto      0       NULL
+  t         preto      2        w
+  u         preto      3        t
+  v         preto      2        r
+  w         preto      1        s
+  x         preto      2        w
+  y         preto      3        x
