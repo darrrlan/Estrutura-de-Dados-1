@@ -1,0 +1,61 @@
+// PSEUDO CODIGO de Insercao de AVL
+
+Inputs:
+  - node (arvore)
+  - valor (x)
+
+Outputs:
+  - booleano (true/false)
+
+Algoritmo
+
+  // condicao final da recursao (positiva)
+  1. Se cheguei numa posicao de folha
+    Cria um novo no
+    Aloca memoria
+    Inserção do elemento
+    Retorna verdadeiro (sucesso)
+
+  // condicao final da recursao (negativa)
+  // elemento x que eu quero inserir ja existe na arvore
+  2. Se x já existe na arvore
+    Retorna falso (falha)
+
+  bool auxiliar;
+
+  // laço recursivo
+  3. Se elemento (x) for menor do que o elemento
+    do no atual (node->x)
+    auxiliar = Chamar Inserção recurisvamente para filho
+    da esquerda
+  4. Senão (x > node->x)
+    auxiliar = Chamar Inserção recurisvamente para filho
+    da direita
+
+  // requer mais verificacoes
+
+  5. Se auxiliar for falso:
+    Não houve insercao nas chamadas seguintes
+     da recursao. Não houve mudança na arvore
+    Retorna falso.
+
+  6. Se auxiliar for verdadeiro, houve mudança
+  na estrutura da arvore
+    - Verificar alturas das subarvores direita e
+      esquerda
+      hd = alturaArvore(node->dir)
+      he = alturaArvore(node->esq)
+    - Avaliar se houve desbalanceamento 
+
+  7. Se não houve desbalanceamento (-1, 0 +1):
+    - a gente nao faz, retorna true
+
+  8. Se houve desbalanceamento (+2 ou -2):
+    - Analisar qual caso temos
+    - Aplicar Rotacoes()
+    Aplicar rotacoes
+      * +2 -> rotação para esquerda
+      * -2 -> rotação para direita
+    - Retorna verdadeiro.
+
+fim algoritmo
